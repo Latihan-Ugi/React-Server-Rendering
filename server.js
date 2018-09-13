@@ -11,7 +11,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(express.static('build'));
+app.use(express.static('build/public'));
 
 app.get('*', (req, res) => {
 
@@ -28,10 +28,15 @@ app.get('*', (req, res) => {
         <title>Test</title>
         </head>
         <body>
-            ${content}
+            <div id="root">
+                ${content}
+            </div>
+            <script src="client_bundle.js"></script>
         </body>
         </html>
     `;
+
+    res.send(html)
 
 })
 

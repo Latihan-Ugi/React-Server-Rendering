@@ -7,10 +7,14 @@ class HomePageComponent extends React.Component {
         this.state = {};
     }
 
+    Test() {
+        console.log("Hallo")
+    }
     render() {
         return (
             <div>
                 <h1>Hallo Home</h1>
+                <button onClick={() => this.Test()}>Hallo</button>
             </div>
         );
     }
